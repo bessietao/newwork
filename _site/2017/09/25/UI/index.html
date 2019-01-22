@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UI에 대해</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/25/UI/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">UI에 대해</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-25 00:00:00 +0100">September 25, 2017</time>
+              
+
+                <h1 id="ui에-대해">UI에 대해</h1>
+
+<h3 id="1-ui에-들어가기에-앞서">1. UI에 들어가기에 앞서</h3>
+
+<ul>
+  <li>
+    <p>해상도(resolutions)</p>
+
+    <ul>
+      <li>pixel : 실제 이미지 사이즈</li>
+      <li>point : 화면에 표시되는 이미지 사이즈</li>
+    </ul>
+
+    <blockquote>
+      <p>원래의 이미지를 나타내는 단위는 픽셀이라는 단위이다. 하지만 아이폰의 경우에는 단위를 픽셀이 아닌 포인트로 사용하고 있는다. 포인트는 픽셀을 더 잘게 나누어 표현하여 더 해상도가 좋게 나타내기 위함이다. 지금 사용하는 아이폰에 경우에는 2x포인트를 사용해서 한 포인트당 4개의 픽셀을 나타낼 수 있고 아이폰 플러스나 아이패드의 경우에는 한 포인트당 9개의 픽셀을 나타낼수 있다.</p>
+    </blockquote>
+
+    <p><img src="https://simajune.github.io/img/posting/17092501.png" alt="17092501" /></p>
+  </li>
+  <li>
+    <p>좌표계</p>
+    <ul>
+      <li>아이폰의 좌표는 View 기준으로 좌측상단이 (0, 0)이고 가로는 x, 세로는 y의 값을 나타낸다.</li>
+      <li>View는 바로 상위 뷰를 상대적으로 잡고 좌표를 잡게 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-프레임워크란">2. 프레임워크란</h3>
+
+<ul>
+  <li>애플리케이션 프레임워크(Application Framework)는 프로그래밍에서 특정 운영 체제를 위한 응용 프로그램 표준 구조를 구현하는 클래스와 라이브러리 모임이다. 간단하게 프레임워크라고도 부른다. 재사용할 수 있는 수많은 코드를 프레임워크로 통합함으로써 개발자가 새로운 애플리케이션을 위한 표준 코드를 다시 작성하지 않아도 같이 사용된다. 프레임워크의 구현은 객체 지향 프로그래밍 기법이 사용되고 있는 응용 프로그램 고유의 클래스가 프레임워크의 기존 클래스를 상속할 수 있다.</li>
+  <li>지금부터 사용하게되는 프레임워크는 Cocoa touch Framework에 추가된 UI관련 기능의 클래스가 모여있는 프레임워크인 UIKit 프레임워크이다.</li>
+  <li>UI 클래스의 상속 관계는 아래의 그림과 같다. <img src="https://simajune.github.io/img/posting/17092502.png" alt="17092502" /></li>
+</ul>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/21/Closure/" data-toggle="tooltip" data-placement="top" title="클로져 (Closure)">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/25/UIView/" data-toggle="tooltip" data-placement="top" title="UIView란">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>객체지향 프로그래밍의 5가지 특징</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/12/OOP/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">객체지향 프로그래밍의 5가지 특징</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-12 00:00:00 +0100">September 12, 2017</time>
+              
+
+                <h1 id="객체지향-프로그래밍의-5가지-특징">객체지향 프로그래밍의 5가지 특징</h1>
+
+<h3 id="1-추상화abstraction">1. 추상화(<strong>Abstraction</strong>)</h3>
+
+<blockquote>
+  <h5 id="추상화는-공통의-속성이나-기능을-묶에-이름을-붙이는-것이다"><code class="highlighter-rouge">추상화</code>는 공통의 속성이나 기능을 묶에 이름을 붙이는 것이다.</h5>
+
+  <h5 id="우리가-배우는-객체지향-프로그래밍-관점에서-보면-클래스를-정의하는-것이라고-할-수-있다">우리가 배우는 객체지향 프로그래밍 관점에서 보면 클래스를 정의하는 것이라고 할 수 있다.</h5>
+</blockquote>
+
+<hr />
+
+<h3 id="2-캡슐화encapsulation">2. 캡슐화(<strong>Encapsulation</strong>)</h3>
+
+<blockquote>
+  <h5 id="캡슐화는-변하는-기능을-분리해-개체의-프로퍼티나-메서드를-묶어-단일-단위-즉-클래스로-묶는-프로세스를-말한다"><code class="highlighter-rouge">캡슐화</code>는 변하는 기능을 분리해 개체의 프로퍼티나 메서드를 묶어 단일 단위 즉, 클래스로 묶는 프로세스를 말한다.</h5>
+
+  <h5 id="사용자는-이-클래스를-사용함에-있어-클래스가-제공하는-메서드의-기능만을-알고-그-기능만-사용할-뿐이지-실제로-그-메소드가-어떻게-작동하는지는-알-수-없다">사용자는 이 클래스를 사용함에 있어 클래스가 제공하는 메서드의 기능만을 알고 그 기능만 사용할 뿐이지 실제로 그 메소드가 어떻게 작동하는지는 알 수 없다.</h5>
+
+  <h6 id="예를-들어-우리가-자주-쓰는-print함수는-우리가-이-함수를-사용함으로-특정한-값이나-문자를-출력한다는-것은-알지만-실제로-어떻게-작동하는지는-알지-못한다">예를 들어, 우리가 자주 쓰는 print함수는 우리가 이 함수를 사용함으로 특정한 값이나 문자를 출력한다는 것은 알지만 실제로 어떻게 작동하는지는 알지 못한다.</h6>
+</blockquote>
+
+<hr />
+
+<h3 id="3-은닉화hidden">3. 은닉화(Hidden)</h3>
+
+<blockquote>
+  <h5 id="은닉화는-캡슐화와-비슷하지만-약간의-차이가-있다"><code class="highlighter-rouge">은닉화</code>는 캡슐화와 비슷하지만 약간의 차이가 있다.</h5>
+
+  <h5 id="캡슐화로-만든-클래스의-속성들을-외부에서-건드리지-못하게-접근을-하지-못하도록-private로-설정해서-클래스-밖에서-함부로-건드리지-못하게-한다">캡슐화로 만든 클래스의 속성들을 외부에서 건드리지 못하게 접근을 하지 못하도록 private로 설정해서 클래스 밖에서 함부로 건드리지 못하게 한다.</h5>
+</blockquote>
+
+<hr />
+
+<h3 id="4-상속성inheritance">4. 상속성(<strong>Inheritance</strong>)</h3>
+
+<blockquote>
+  <h5 id="상속성이란-상위-클래스부모-클래스의-특징을-하위-클래스자식-클래스가-물려받는-것을-말한다"><code class="highlighter-rouge">상속성</code>이란 <u>상위 클래스(부모 클래스)</u>의 특징을 <u>하위 클래스(자식 클래스)</u>가 물려받는 것을 말한다.</h5>
+
+  <h5 id="하나의-클래스가-가지고-있는-특징-프로퍼티나-메서드들을-그대로-다른-클래스가-물려줄-수-있는-특징을-가지고-있다">하나의 클래스가 가지고 있는 특징 (프로퍼티나 메서드)들을 그대로 다른 클래스가 물려줄 수 있는 특징을 가지고 있다.</h5>
+
+  <h5 id="이-상속은-스위프트에선-하나밖에-받을-수-없다">이 상속은 스위프트에선 하나밖에 받을 수 없다.</h5>
+
+  <h5 id="상속성이라는-특징이-없다면-절차지향과-다를게-없고-객체-지향에서-제일-중요한-특징이다">상속성이라는 특징이 없다면 절차지향과 다를게 없고 객체 지향에서 제일 중요한 특징이다.</h5>
+</blockquote>
+
+<hr />
+
+<h3 id="5-다형성plymorphism">5. 다형성(<strong>Plymorphism</strong>)</h3>
+
+<blockquote>
+  <h5 id="다형성이란-하나의-메소드나-클래스가-있을-때-이것들이-다양한-방법으로-동작하는-것을-의미한다-몇가지-예를-들어-다형성을-설명해보도록-하자"><code class="highlighter-rouge">다형성</code>이란 하나의 메소드나 클래스가 있을 때 이것들이 다양한 방법으로 동작하는 것을 의미한다. 몇가지 예를 들어 다형성을 설명해보도록 하자.</h5>
+
+  <blockquote>
+    <h6 id="오버로딩"><code class="highlighter-rouge">오버로딩</code></h6>
+
+    <p>다른 동작을 하는 메서드가 이름을 서로 공유하는 것을 오버로딩이라 한다.</p>
+
+    <p>예를 들어 클래스 내에 평균을 구하는 메서드를 같은 이름으로 두 개를 구현했다고 하자.</p>
+
+    <p>평균을 구할 때 하나의 메서드는 파라미터의 데이터타입을 Int로 로 받아서 평균을 구했고 다른 하나는 파라미터의 데이터타입을 Double로 받아서 평균을 구했다.</p>
+
+    <p>여기서 두개의 메서드는 같은 이름이고 같은 기능을 하지만 데이터를 받는 데이터의 타입이 다르기 때문에 서로 다른 동작을 한다고 볼 수 있다. 이것이 오버로딩의 다형성의 예이다.</p>
+
+    <p>여기서 메서드의 기능이 꼭 같아야만 하는 것은 아니다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="n">printValue</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="kd">func</span> <span class="nf">outValue</span> <span class="p">(</span><span class="nv">num</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="kd">func</span> <span class="nf">outValue</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">"good"</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </blockquote>
+
+  <blockquote>
+    <h5 id="오버라이딩"><code class="highlighter-rouge">오버라이딩</code></h5>
+
+    <p>부모클래스에서 물려 받은 메서드를 자식 클래스에서 기능을 다시 정의 해서 사용하는 것을 뜻한다.</p>
+
+    <p>상속받는 여러 클래스들이 같은 이름으로 다른 기능을 하는 메소드를 정의하고 사용할 수 있다. 하지만 이를 이용하면 부모클래스에 있는 메서드는 더 이상 사용할 수 없다.</p>
+
+    <p>예를 들면, 아래와 같이 상속 받은 printString이란 클래스에서 printValue를 상속 받았다. 상속 받으면 부모 클래스의 outValue라는 메서드를 사용할 수 있지만 자식 클래스인 printString 클래스에서는 outValue라는 메서드를 다르게 설정해서 사용할 수 있다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="n">printValue</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span>
+  
+  <span class="kd">func</span> <span class="nf">outValue</span> <span class="p">(</span><span class="nv">num</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nv">printString</span><span class="p">:</span> <span class="n">printValue</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">outValue</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">", hello"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/12/ArrayEx/" data-toggle="tooltip" data-placement="top" title="배열 연습문제">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/13/Git/" data-toggle="tooltip" data-placement="top" title="Git 사용법">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

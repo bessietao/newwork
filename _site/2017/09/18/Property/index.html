@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>프로퍼티 (Property)</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/18/Property/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">프로퍼티 (Property)</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-18 00:00:00 +0100">September 18, 2017</time>
+              
+
+                <h1 id="프로퍼티">프로퍼티</h1>
+
+<ul>
+  <li>프로퍼티는 특정 클래스 , 구조체, 열거형에서 쓰이는 속성이다. 프로퍼티의 종류에는 저장 프로퍼티, 연산 프로퍼티, 타입 프로퍼티가 있다.</li>
+</ul>
+
+<h3 id="1-저장-프로퍼티">1. 저장 프로퍼티</h3>
+
+<ul>
+  <li>
+    <p>가장 기본적인 형태로 클래스와 구조체의 인스턴스의 속성을 나타내는 변수나 상수이다.</p>
+  </li>
+  <li>
+    <p>값을 저장하는 용도로 사용되고 초기값을 설정할 수 있다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Number</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">num1</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">num2</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">num1</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">num2</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">num1</span> <span class="o">=</span> <span class="n">num1</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">num2</span> <span class="o">=</span> <span class="n">num2</span>
+    <span class="p">}</span>
+  	<span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">Number</span> <span class="o">=</span> <span class="kt">Number</span><span class="p">(</span><span class="nv">num1</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">num2</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>위에 코드를 보면 number라는 인스턴스의 프로퍼티를 생성하는 코드이다. 클래스 내에 num1과 num2가 초기화가 되어 있어서 인스턴스를 생성할 때 초기값을 넣어주지 않아도 number의 인스턴스의 저장 프로퍼티는 초기값이 설정이 되도 만약  맨 아래 코드처럼 초기화할 때 값을 넣어주면 인스턴스를 생성하면서 넣어준 값으로 초기화를 하게 된다.</p>
+  </li>
+  <li>
+    <h4 id="지연-저장-프로퍼티lazy-stored-property">지연 저장 프로퍼티(Lazy stored property)</h4>
+
+    <ul>
+      <li>지연 저장된 속성은 처음 프로퍼티가 사용되기 전까지 초기값이 계산되지 않은 특성을 가지고 있는 프로퍼티이다. 따라서, 초기화하는데 오래걸리거나, 복잡한 초기화 과정이 있는 변수의 경우 지연저장을 사용하면 좋다.</li>
+      <li>지연 저장 속성은 <strong>lazy</strong>를 키워드 앞에 작성하면 된다.</li>
+      <li><strong>let</strong>은 지연 저장 프로퍼티로 설정될 수 없다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-연산-프로퍼티">2. 연산 프로퍼티</h3>
+
+<ul>
+  <li>
+    <p>실제로 값을 저장하지는 않지만 get,  set 키워드를 통해서 값을 간접적으로 설정하거나 받을 수 있다.</p>
+  </li>
+  <li>
+    <p>클래스, 구조체, 열거형에서 사용할 수 있다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">struct</span> <span class="kt">Point</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="p">}</span>
+<span class="kd">struct</span> <span class="kt">Size</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">width</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="p">}</span>
+<span class="kd">struct</span> <span class="kt">Rect</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">origin</span> <span class="o">=</span> <span class="kt">Point</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">size</span> <span class="o">=</span> <span class="kt">Size</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">Point</span> <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">centerX</span> <span class="o">=</span> <span class="n">origin</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">size</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">centerY</span> <span class="o">=</span> <span class="n">origin</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">size</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kt">Point</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">centerX</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">centerY</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nf">set</span><span class="p">(</span><span class="n">newCenter</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">origin</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">newCenter</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">size</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">origin</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">newCenter</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="n">size</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">system</span><span class="p">:</span> <span class="kt">Rect</span> <span class="o">=</span> <span class="kt">Rect</span><span class="p">()</span>
+
+<span class="n">system</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="kt">Point</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">system</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="kt">Size</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">system</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+<span class="c1">//7.5  6.0</span>
+<span class="n">system</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="kt">Point</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">//7.5</span>
+</code></pre></div>    </div>
+
+    <p>연산 프로퍼티의 get, set에 대해 많이 헤깔리는 부분이 많았다. 어떻게 이해하면 될까 생각을 했는데 연산 프로퍼티는 인스턴스의 프로퍼티로 인해 값이 결정되는 것이다. 따라서, get의 경우는 기존의 인스턴스의 프로퍼티로 인해 연산 프로퍼티의 값이 결정되는 경우이고, set에 경우는 연산 프로퍼티의 값을 설정함으로 인해 다른 프로퍼티의 값이 결정되는 경우로 생각하니깐 이해가 좀 되었따.</p>
+  </li>
+  <li>
+    <p>set에 경우는 값의 이름을 지정하게 되는데 개발자가 값을 지정하지 않을 경우에는 default 값으로 newValue가 설정이 된다.</p>
+  </li>
+  <li>
+    <p>연산 프로퍼티는 get과 set이 둘 다 사용이 되거나 get만 사용을 할 수 있다. set만 사용하는 경우는 없는 것이다.</p>
+  </li>
+</ul>
+
+<h3 id="3-프로퍼티-옵져버">3. 프로퍼티 옵져버</h3>
+
+<ul>
+  <li>
+    <p>프로퍼티 값의 변화를 감시하고 그에 따라 대응한다.</p>
+  </li>
+  <li>
+    <p>초기값이 설정된 저장 프로퍼티에서 사용가능 하다.</p>
+  </li>
+  <li>
+    <p>프로퍼티의 값이 설정될 때마다 호출된다.</p>
+  </li>
+  <li>
+    <p>didSet, willSet 키워드를 통해 값 변화의 직전 직후를 감지할 수 있다.</p>
+  </li>
+  <li>
+    <p>값 이름을 지정하지 않으면 didSet은 oldValue, willSet은 newValue가 기분 값으로 설정된다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">changeValue</span><span class="p">:</span><span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">{</span>
+	<span class="nf">didSet</span><span class="p">(</span><span class="n">oldV</span><span class="p">){</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"oldValue </span><span class="se">\(</span><span class="n">oldV</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nf">willSet</span><span class="p">(</span><span class="n">willV</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"newValue </span><span class="se">\(</span><span class="n">willV</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="n">changeValue</span> <span class="o">=</span> <span class="mi">4</span>
+</code></pre></div>    </div>
+
+    <p>위에 변수 changeValue는 값이 설정될 때마다 아래의 코드가 실행이 될 것이다.</p>
+
+    <p>아래에 changeValue에 값에 4를 대입한다고 적으면 먼저 willSet이 실행되어 “newValue 4”라는 문자열이 출력되고, changeValue의 값이 4가 되는 순간 didSet이 실행되어 “oldValue 0”이라는 문자열이 출력된다.</p>
+  </li>
+</ul>
+
+<h3 id="4-타입-프로퍼티">4. 타입 프로퍼티</h3>
+
+<ul>
+  <li>
+    <p>인스턴스의 속성이 아닌, 타입에 따른 속성을 정의할 때 사용된다.</p>
+  </li>
+  <li>
+    <p>static 키워드를 사용해서 값타입에서 타입 프로퍼티를 설정할 수 있으며 class 키워드를 사용해서 클래스 타입에서 타입프로퍼티를 설정할 수 있다.</p>
+  </li>
+  <li>
+    <p>값을 가져올 때는 클래스의 이름을 통해서 가져올 수 있다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">AudioChannel</span> <span class="p">{</span>
+	<span class="kd">static</span> <span class="k">let</span> <span class="nv">level</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="kd">static</span> <span class="k">var</span> <span class="nv">maxLevel</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">var</span> <span class="nv">currentLevel</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="k">didSet</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="n">currentLevel</span> <span class="o">&gt;</span> <span class="kt">AudioChannel</span><span class="o">.</span><span class="n">level</span>
+			<span class="p">{</span>
+			<span class="n">currentLevel</span> <span class="o">=</span> <span class="kt">AudioChannel</span><span class="o">.</span><span class="n">level</span>
+			<span class="p">}</span>
+			<span class="k">if</span> <span class="n">currentLevel</span> <span class="o">&gt;</span> <span class="kt">AudioChannel</span><span class="o">.</span><span class="n">maxLevel</span>
+			<span class="p">{</span>
+			<span class="kt">AudioChannel</span><span class="o">.</span><span class="n">maxLevel</span> <span class="o">=</span> <span class="n">currentLevel</span>
+			<span class="p">}</span>
+ 	 	<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/18/Method/" data-toggle="tooltip" data-placement="top" title="메서드 (Method)">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/18/Switch/" data-toggle="tooltip" data-placement="top" title="연산자와 Switch문">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

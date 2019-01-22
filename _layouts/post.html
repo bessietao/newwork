@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+  <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">{{ page.title }}</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              {% if page.author %}
+                  {{ page.author }}
+              {% else %}
+                  {{ site.author.name }}
+              {% endif %}
+
+              {% if page.date %}
+                <br>
+                <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+              {% endif %}
+
+                {{ content }}
+                <br>
+                {% if page.comments %}
+                    {% include disqus_comments.html %}
+                {% endif %}
+                <br>
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>

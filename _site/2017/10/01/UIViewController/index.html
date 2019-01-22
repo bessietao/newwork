@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UIViewController</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/10/01/UIViewController/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">UIViewController</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-10-01 00:00:00 +0100">October 01, 2017</time>
+              
+
+                <h1 id="uiviewcontroller">UIViewController</h1>
+
+<h3 id="1-uiviewcontroller">1. UIViewController</h3>
+
+<ul>
+  <li>앱의 기초가 되는 내부 구조</li>
+  <li>모든 앱은 적어도 한개 이상의 ViewController를 가지고 있고 대부분의 앱은 여러개의 ViewController로 이루어져 있다.</li>
+  <li>ViewController는 사용자의 인터렉션과 앱의 데이터 사이에서 컨트롤 역할을 한다.</li>
+  <li>ViewController는 View관리, 사용자 이벤트 핸들링, ViewController간의 전환 등을 위한 메소드와 프로퍼티를 가지고 있다.</li>
+</ul>
+
+<h3 id="2-root-view">2. Root View</h3>
+
+<p>​	<img src="https://simajune.github.io/img/posting/UIViewController1.png" width="600px" height="400px" /></p>
+
+<ul>
+  <li>View의 계층을 관리하는 기능</li>
+  <li>모든 뷰컨트롤러는 한개의 RootView를 가지고 있다.</li>
+  <li>화면에 표시하기 위해서는 모든 뷰는 RootView의 계층 안에 있어야 한다.</li>
+</ul>
+
+<h3 id="3-viewcontroller-특징">3. ViewController 특징</h3>
+
+<ul>
+  <li>Child UIViewController</li>
+  <li>UserInteraction</li>
+  <li>Data Marshaling(중계자)</li>
+  <li>Resource Management</li>
+</ul>
+
+<hr />
+
+<h4 id="ㄱ-child-uiviewcontroller">ㄱ. Child UIViewController</h4>
+
+<p><img src="https://simajune.github.io/img/posting/UIViewController2.png" width="600px" height="600px" /></p>
+
+<ul>
+  <li>ViewController는 다른 ViewController를 Child ViewController로 Container의 역할을 수행한다.</li>
+  <li>Child ViewController의 Root View를 자신의 Root View에 addSubView하여 표시한다.</li>
+</ul>
+
+<h4 id="ㄴ-userinteraction">ㄴ. UserInteraction</h4>
+
+<ul>
+  <li>UIViewController는 UIResponder를 상속받은 클래스로 이벤트 체인으로부터 오는 이벤트는 효과적으로 처리한다.</li>
+  <li>즉 사용자의 모든 이벤트는 ViewController가 받아서 각 View에 해당되는 Method와 Delegate로 처리한다.</li>
+</ul>
+
+<h4 id="ㄷ-data-marshaling중계자">ㄷ. Data Marshaling(중계자)</h4>
+
+<p><img src="https://simajune.github.io/img/posting/UIViewController3.png" width="600px" height="400px" /></p>
+
+<ul>
+  <li>ViewController는 자신이 관리하는 View들과 앱 내부의 데이터와의 중계자 역할을 한다.</li>
+</ul>
+
+<h4 id="ㄹ-resource-management">ㄹ. Resource Management</h4>
+
+<ul>
+  <li>ViewController안에 있는 모든 View나 Object는 모두 ViewController의 책임이다.</li>
+  <li>메모리가 부족시 didReceiveMemoryWarning() 메소드가 자동으로 불리며 오랫동안 사용하지 않은 객체와 다시 쉽게 만들 수 있는 객체를 제거할 수 있어 메모리를 효율적으로 관리한다.</li>
+</ul>
+
+<h3 id="4-uiviewcontroller-종류">4. UIVIewController 종류</h3>
+
+<ul>
+  <li>General View Controller
+    <ul>
+      <li>UIViewController</li>
+      <li>UITableViewController</li>
+      <li>UICollectionViewController</li>
+    </ul>
+  </li>
+  <li>Container View Controller
+    <ul>
+      <li>UINavigationController</li>
+      <li>UITabbarController</li>
+      <li>UISplitViewController</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="general-view-controller">General View Controller</h4>
+
+<ul>
+  <li>일반적인 ViewController 형태</li>
+  <li>각 ViewController가 Root View를 가지고 있다.
+    <ul>
+      <li>UIViewController의 Root View는 UIView</li>
+      <li>UITableViewController의 Root View는 UITableView</li>
+      <li>UICollectionViewController의 Root View는 UICollectionView</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-uiviewcontroller-instance-생성">5. UIViewController Instance 생성</h3>
+
+<ul>
+  <li>
+    <p>UIViewController의 Instance를 생성하는 방법</p>
+
+    <ol>
+      <li>
+        <p>일반적인 초기화 메소드를 활용한 instance 생성</p>
+
+        <p>let vc: UIViewController = UIViewController()</p>
+      </li>
+      <li>
+        <p>xib파일이 Storyboard에 있을 때, Storyboard를 통한 instance 생성방법</p>
+
+        <p>let storyboard = UIStoryborad(name: “스토리보드 이름”, bundle: nil)</p>
+
+        <p>let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: “스토리보드 ID”)</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="6-uiviewcontroller간-화면-전환">6. UIViewController간 화면 전환</h3>
+
+<ul>
+  <li>현재 UIViewController에서 새로운 화면으로 전환을 위해 ViewController는 화면전환을 해야한다.</li>
+  <li>UIViewController의 화면전환 방법은 크게 3가지가 존재한다.
+    <ul>
+      <li>Present Modally</li>
+      <li>UINavigationController</li>
+      <li>UITabbarController</li>
+    </ul>
+  </li>
+  <li>Storyboard내에서의 화면전환에는 Segue Instance를 사용해서 직관적으로 ViewController간의 관계를 보여준다.</li>
+</ul>
+
+<h4 id="present-modally">Present Modally</h4>
+
+<ul>
+  <li>
+    <p>일번적인 화면전환을 위한 방법</p>
+  </li>
+  <li>
+    <p>기준 ViewController에서 대상 ViewController를 Present한다.(일반적으로 기준 ViewController가 대상 ViewController Instance를 생성한다.)</p>
+  </li>
+  <li>
+    <p>화면이 전환되어도 기준 ViewController가 메모리에 존재하며, 대상 ViewController 를 되돌아 갈 때 메모리에서 제거된다.</p>
+  </li>
+  <li>
+    <p>다음 두 메소드를 사용해서 화면전환과 되돌아오기가 가능하다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">present</span><span class="p">(</span><span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span>
+<span class="c1">//화면전환</span>
+<span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span>
+<span class="c1">//되돌아오기</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>present ( 기준 ViewController Method내부)</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">goToNextVC</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//다음 인스턴스 생성</span>
+	<span class="k">let</span> <span class="nv">storyboard</span> <span class="o">=</span> <span class="kt">UIStoryboard</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="err">“</span><span class="kt">Storyboard이름</span><span class="err">”</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+	<span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="n">storyboard</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="err">“</span><span class="kt">NextViewController</span><span class="err">”</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">NextViewController</span>
+	<span class="c1">//present</span>
+	<span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">nextVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">//컴플리션 클로져 내부</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>dismiss (대상 ViewController Method 내부)</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">backVC</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//되돌아 가기</span>
+	<span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>​</p>
+  </li>
+</ul>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/10/01/UIAlertController/" data-toggle="tooltip" data-placement="top" title="UIAlertController">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/10/01/CountdownLabel/" data-toggle="tooltip" data-placement="top" title="CountdownLabel">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

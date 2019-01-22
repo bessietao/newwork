@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AutoLayout</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/10/13/AutoLayout/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">AutoLayout</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-10-13 00:00:00 +0100">October 13, 2017</time>
+              
+
+                <h1 id="autolayout">AutoLayout</h1>
+
+<h3 id="1-autolayout">1. AutoLayout</h3>
+
+<ul>
+  <li>AutoLayout은 각각의 View의 Size와 위치를 제약사항을 통해서 유동적으로 계산하여 표현하는 방법</li>
+</ul>
+
+<h3 id="2-auto-layout-vs-frame-based-layout-차이점">2. Auto Layout VS Frame-Based Layout 차이점</h3>
+
+<p><img src="https://simajune.github.io/img/posting/AutoLayout1.png" width="700px" height="450px" /></p>
+
+<ul>
+  <li>Frame-Based Layout은 View의 시작점과 그 시작점에서의 Width와 Height를 설정하여 View를 표현한다.</li>
+  <li>AutoLayout은 View의 특정 제약사항을 주어 View를 표현한다.</li>
+</ul>
+
+<h3 id="3-constraint">3. Constraint</h3>
+
+<ul>
+  <li>
+    <p>각 View의 거리, 길이, 위치 등을 표현하기 위한 제약</p>
+
+    <p><img src="https://simajune.github.io/img/posting/AutoLayout2.png" width="650px" height="200px" /></p>
+
+    <ul>
+      <li>Multiplier : 비율을 통한 레이아웃 설정을 위한 속성</li>
+      <li>Constant : 일정한 간격을 유지하기 위한 속성</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-attribute속성">4. Attribute(속성)</h3>
+
+<p><img src="https://simajune.github.io/img/posting/AutoLayout3.png" width="600px" height="500px" /></p>
+
+<ul>
+  <li>
+    <p>Size Attribute</p>
+
+    <ol>
+      <li>Width</li>
+      <li>Height</li>
+    </ol>
+  </li>
+  <li>
+    <p>Location Attribute</p>
+
+    <ol>
+      <li>
+        <p>Leading</p>
+      </li>
+      <li>Trailing</li>
+      <li>Top</li>
+      <li>Bottom</li>
+      <li>Vertical</li>
+      <li>Horizontal</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="5-제약사항-만들기">5. 제약사항 만들기</h3>
+
+<ul>
+  <li>
+    <p>Using Storyboard</p>
+
+    <ul>
+      <li>
+        <p>Control + Drag</p>
+
+        <ol>
+          <li><img src="https://simajune.github.io/img/posting/AutoLayout4.png" width="500px" height="250px" /></li>
+        </ol>
+
+        <ul>
+          <li>Drag를 어떤 위치에 놓는냐에 따라 제약의 메뉴가 달라진다.</li>
+        </ul>
+
+        <ol>
+          <li><img src="https://simajune.github.io/img/posting/AutoLayout5.png" width="500px" height="200px" /></li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Layout margin</p>
+
+    <ul>
+      <li>SuperView의 가장자리와 SubView와의 간격이 유지되도록 설정된 내부 패딩 값</li>
+      <li>기본적으로 UIView 의 내부에 8Point의 여백을 가지고 있다</li>
+      <li>Interface Builder에서는 변경할 수 없으며 UIView.layoutMargins 프로퍼티를 통해 변경이 가능하다</li>
+    </ul>
+  </li>
+  <li>
+    <p>제약사항 만들기 팁</p>
+    <ul>
+      <li>각 View의 주변의 모든 제약사항이 만족해야한다.</li>
+      <li>가로제약, 세로제약을 확인</li>
+      <li>중복된 제약은 제거한다.</li>
+      <li>화면 배치의 기준 View를 정해서 연관된 제약사항을 만들시 수정에 따른 변경 고려</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="6-stackview">6. StackView</h3>
+
+<ul>
+  <li>
+    <p>제약 없이 View를 자동배치</p>
+  </li>
+  <li>
+    <p>StackView의 하위뷰로 추가시 Option에 따라 View가 자동으로 배치</p>
+  </li>
+  <li>
+    <p>iOS9 이후에 사용가능</p>
+  </li>
+  <li>
+    <p>Horizontal Stack View와 Vertical Stack View로 나눠져 있다</p>
+
+    <p><img src="https://simajune.github.io/img/posting/AutoLayout6.png" width="200px" height="250px" /></p>
+  </li>
+</ul>
+
+<h3 id="7-stackview-구조">7. StackView 구조</h3>
+
+<p><img src="https://simajune.github.io/img/posting/AutoLayout7.png" width="700px" height="500px" /></p>
+
+<ul>
+  <li>
+    <p>Alignment</p>
+
+    <ul>
+      <li>Fill, Top, Center, Bottom</li>
+    </ul>
+  </li>
+  <li>
+    <p>Distribution</p>
+
+    <ul>
+      <li>Fill</li>
+      <li>Fill Equally</li>
+      <li>Fill Proportionally</li>
+      <li>Equal Spacing</li>
+      <li>Equal Centering</li>
+    </ul>
+  </li>
+</ul>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/10/12/Delegate/" data-toggle="tooltip" data-placement="top" title="Protocol & Delegate">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/03/27/ClassStruct/" data-toggle="tooltip" data-placement="top" title="클래스와 구조체">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

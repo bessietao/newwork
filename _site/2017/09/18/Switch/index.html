@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>연산자와 Switch문</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/18/Switch/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">연산자와 Switch문</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-18 00:00:00 +0100">September 18, 2017</time>
+              
+
+                <h1 id="연산자와-switch문">연산자와 Switch문</h1>
+
+<h3 id="1-연산자">1. 연산자</h3>
+
+<ul>
+  <li>저번에 배운 연산자 외에 추가되는 연산자가 있다. 그것이 바로 Identity연산자와 삼항연산자이다.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Identity연산자</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Identity연산자</th>
+          <th>예제</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>===</td>
+          <td>person2 === person1</td>
+          <td>person1과 person2는 같은 인스턴스인 경우 참</td>
+        </tr>
+        <tr>
+          <td>!==</td>
+          <td>person2 !== person1</td>
+          <td>person1과 person2는 다른 인스턴스인 경우 참</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>삼항연산자</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>삼항연산자</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>question ? answer1: answer2</td>
+          <td>question이 참이면 answer1값을 거짓이면 answer2값을 지정한다.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">var</span> <span class="nv">result</span><span class="p">:</span><span class="kt">String</span> <span class="o">=</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">19</span> <span class="p">?</span> <span class="s">"성년"</span> <span class="p">:</span> <span class="s">"미성년"</span>
+<span class="c1">//이 경우 상수 age의 값이 19보다 크므로 result의 값은 "성년"이 대입 된다.</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="2-switch문">2. Switch문</h3>
+
+<ul>
+  <li>
+    <p>패턴 비교문으로 가장 첫번째 매칭 되는 패턴의 구문이 실행이 된다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="n">someCharacter</span> <span class="p">{</span>
+<span class="k">case</span> <span class="s">"a"</span><span class="p">:</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"The first letter of the alphabet"</span><span class="p">)</span>
+<span class="k">case</span> <span class="s">"z"</span><span class="p">,</span> <span class="s">"y"</span><span class="p">:</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"The letter of the alphabet"</span><span class="p">)</span>
+<span class="k">default</span><span class="p">:</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"Some other character"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>위에 코드를 보면 switch문을 이용해서 someCharacter의 값을 비교하는 부분이다. someCharacter의 값이 “a”이면 “The first letter of the alphabet”란 문자열이 출력될 것이고, 값이 만약 “z”나 “y”일 경우에는 “The letter of the alphabet”란 문자열이 그 외의 문자인 경우에는 “Some other character”라는 문자열이 출력될 것이다.</p>
+  </li>
+  <li>
+    <p>각 상태는 case 키워드를 통해 나타낼 수 있다.</p>
+  </li>
+  <li>
+    <p>각 case 상태의 끝에는 콜론(:)을 작성해서 매칭 패턴을 종료한다.</p>
+  </li>
+  <li>
+    <p>여러개의 case가 필요하면 콤마(,)를 통해 상태를 추가할 수 있다.</p>
+  </li>
+  <li>
+    <p>각 case는 분기로 실행되고 매칭된 해당 case문이 종료되면 switch문을 종료시킨다.</p>
+  </li>
+  <li>
+    <p>각 case의 상태는 switch문의 case에 매칭된 값의 지점을 결정하고 모든 값에 대해 매칭이 되어야 한다. 만약 매칭되는 값이 없다면 default를 사용하여 모든 값이 매칭되도록해야 한다.</p>
+  </li>
+  <li>
+    <h4 id="interval-matching">Interval matching</h4>
+
+    <ul>
+      <li>
+        <p>Switch문의 상태는 단순 값의 매칭을 넘어 다양한 패턴을 통해 매칭을 할 수 있다.</p>
+      </li>
+      <li>
+        <p>Interval matching은 범위연산자를 통해 해당 범위에 해당하는 값을 매칭시킬 수 있다.</p>
+
+        <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">interSwitch</span><span class="p">(</span><span class="nv">count</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">let</span> <span class="nv">countedThings</span> <span class="o">=</span> <span class="s">"moons orbiting Saturn"</span>
+	<span class="k">let</span> <span class="nv">naturalCount</span><span class="p">:</span> <span class="kt">String</span>
+	<span class="k">switch</span> <span class="n">count</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="n">naturalCount</span> <span class="o">=</span> <span class="s">"no"</span>
+	<span class="k">case</span> <span class="mi">1</span><span class="o">..&lt;</span><span class="mi">5</span><span class="p">:</span>
+		<span class="n">naturalCount</span> <span class="o">=</span> <span class="s">"a few"</span>
+	<span class="k">case</span> <span class="mi">5</span><span class="o">..&lt;</span><span class="mi">12</span><span class="p">:</span>
+		<span class="n">naturalCount</span> <span class="o">=</span> <span class="s">"several"</span>
+	<span class="k">case</span> <span class="mi">12</span><span class="o">..&lt;</span><span class="mi">100</span><span class="p">:</span>
+		<span class="n">naturalCount</span> <span class="o">=</span> <span class="s">"dozens of"</span>
+	<span class="k">case</span> <span class="mi">100</span><span class="o">..&lt;</span><span class="mi">1000</span><span class="p">:</span>
+		<span class="n">naturalCount</span> <span class="o">=</span> <span class="s">"hundreds of"</span>
+	<span class="k">default</span><span class="p">:</span>
+		<span class="n">naturalCount</span> <span class="o">=</span> <span class="s">"many"</span>
+	<span class="p">}</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"There are </span><span class="se">\(</span><span class="n">naturalCount</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">countedThings</span><span class="se">)</span><span class="s">."</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="튜플-매칭">튜플 매칭</h4>
+
+    <ul>
+      <li>
+        <p>튜플을 사용해서 여러개의 값을 통시에 확인할 수 있다.</p>
+      </li>
+      <li>
+        <p>사용가능한 모든 값에 대한 매칭은 와일드 카드(_)를 통해서 매칭이 가능하다.</p>
+
+        <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:(</span><span class="kt">Int</span><span class="p">,</span><span class="kt">Int</span><span class="p">))</span>
+<span class="p">{</span>
+	<span class="k">switch</span> <span class="n">somePoint</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is at the origin"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is on the x-axis"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is on the y-axis"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is inside the box"</span><span class="p">)</span>
+	<span class="k">default</span><span class="p">:</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is outside of the box"</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="값-바인딩">값 바인딩</h4>
+
+    <ul>
+      <li>case 내부에서 사용되는 임시 값으로 매칭이 가능하다.</li>
+    </ul>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:(</span><span class="kt">Int</span><span class="p">,</span><span class="kt">Int</span><span class="p">))</span>
+<span class="p">{</span>
+	<span class="k">switch</span> <span class="n">somePoint</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is at the origin"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="p">(</span><span class="k">let</span> <span class="nv">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"on the x-axis with an x value of </span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="k">let</span> <span class="nv">y</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"on the y-axis with an y value of </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">):</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is inside the box"</span><span class="p">)</span>
+	<span class="k">default</span><span class="p">:</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is outside of the box"</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="where문">Where문</h4>
+
+    <ul>
+      <li>Switch문에 where문을 사용하여 더 추가적인 조건을 넣을 수 있다.</li>
+    </ul>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">wherePoint</span><span class="p">(</span><span class="nv">point</span><span class="p">:(</span><span class="n">int</span><span class="p">,</span><span class="kt">Int</span><span class="p">))</span>
+<span class="p">{</span>
+	<span class="k">switch</span> <span class="n">point</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="nf">let</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">where</span> <span class="n">x</span> <span class="o">==</span> <span class="nv">y</span><span class="p">:</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"(</span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">) is on the line x == y"</span><span class="p">)</span>
+	<span class="k">case</span> <span class="nf">let</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">where</span> <span class="n">x</span> <span class="o">==</span> <span class="o">-</span><span class="nv">y</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"(</span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">) is on the line x == -y"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="nf">let</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"(</span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">) is just some arbitrary point"</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/18/Property/" data-toggle="tooltip" data-placement="top" title="프로퍼티 (Property)">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/19/Enum/" data-toggle="tooltip" data-placement="top" title="열거형(Enumeration)">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

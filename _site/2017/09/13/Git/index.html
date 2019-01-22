@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Git 사용법</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/13/Git/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">Git 사용법</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-13 00:00:00 +0100">September 13, 2017</time>
+              
+
+                <h1 id="git-사용법">Git 사용법</h1>
+
+<h3 id="1-git과-github의-이해">1. Git과 GitHub의 이해</h3>
+
+<ul>
+  <li>Git
+    <ul>
+      <li>Git은 분산 버전 관리 시스템으로 파일 변경 내역을 계속 추적하도록 개발된 소프트웨어이다.</li>
+      <li>Git으로 프로젝트를 개발하는 사람은 모두 현재 상태의 파일뿐만 아니라 그 프로젝트의 전체 이력을 가지고 있게 된다.</li>
+    </ul>
+  </li>
+  <li>GitHub
+    <ul>
+      <li>GitHub은 Git의 외장 저장소를 공급하는 웹사이트를 말한다.</li>
+      <li>이 외장 저장소를 다른 사람들과 공유할 수 있기 때문에 협업을 할 때 매우 용이하다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<p>###2. 버전관리 시스템과 분산 버전관리 시스템</p>
+
+<ul>
+  <li>버전 관리 시스템
+    <ul>
+      <li>버전 관리 시스템: 프로젝트에 포함된 파일의 변경사항을 추적할 수 있도록 돕는 방법론이나 도구
+        <ul>
+          <li>사용자가 변경한 모든 내용을 추적 관리 가능한 저장소(repository)를 통해 버전관리</li>
+          <li>사용자는 변경된 내용을 저장소에 저장(commit)</li>
+          <li>하나의 중앙 저장소가 있고 모든 사용자는 이 저장소에 변경사항을 전송</li>
+          <li>중앙 저장소에 접근가능한 모든 사람들이 변경사항을 조회가능하고 최신버전을 복사해서 작업할 수 있다</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>분산 버전 관리 시스템
+    <ul>
+      <li>분산 버전 관리 시스템: 각 사용자가 프로젝트의 전체 이력을 관리할 수 있는 자신만의 저장소를 가지고 있다.
+        <ul>
+          <li>기존 버전 관리 시스템과 같이 중앙 저장소를 통해 협업 가능</li>
+          <li>사용자는 변경된 내용을 개인 저장소에 저장(commit)</li>
+          <li>개인 저장소에 있는 최신 내용을 개인 저장소로 가져와 최신버전을 유지가능(pulling)</li>
+          <li>네트워크 연결이 안 되어있는 상황에서도 저장소에 저장 가능하고 네트워크 연결시 중앙 저장소와 동기화 실시</li>
+          <li>개인 저장소와 중앙 저장소 모두 프로젝트 전체 이력을 가지고 있어 네트워크 연결이 안 되어있는 상황에서도 변경이력 조회 가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="3-git의-특징">3. Git의 특징</h3>
+
+<ul>
+  <li>
+    <ol>
+      <li>빠른 속도와 성능</li>
+    </ol>
+
+    <ul>
+      <li>Git의 모든 동작은 local에서 실행되기 떄문에 매번 네트워크 연결을 할 필요가 없어 타 버전 관리 시스템에 비해 속도가 빠름</li>
+    </ul>
+  </li>
+  <li>
+    <ol>
+      <li>분산 작업</li>
+    </ol>
+
+    <ul>
+      <li>중앙 저장소를 통해 한 프로젝트를 여러명의 개발자가 동시에 작업을 분담하여 진행 가능</li>
+    </ul>
+  </li>
+  <li>
+    <ol>
+      <li>데이터의 보장성</li>
+    </ol>
+
+    <ul>
+      <li>Git의 모든 파일은 암호화 시켜주며, 저장(commit)시 체크썸이란 검사를 통해 데이터가 유효한지 검사, commit을 할 때마다 username, 시간, 내용 등을 기록하여 히스토리 관리</li>
+    </ul>
+  </li>
+  <li>
+    <ol>
+      <li>Staging area</li>
+    </ol>
+
+    <ul>
+      <li>작업한 내용을 바로 commit 시키지 않고 index영역에 올려둔 내용만 commit할 수 있다.</li>
+    </ul>
+  </li>
+  <li>
+    <ol>
+      <li>브랜치(branch) 모델</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="4-git의-구조">4. Git의 구조</h3>
+
+<ul>
+  <li>
+    <ol>
+      <li>Workspace</li>
+    </ol>
+
+    <ul>
+      <li>현재 프로젝트의 작업이 이뤄지는 장소</li>
+      <li>Work tree/ Work Directory라고도 한다.</li>
+    </ul>
+  </li>
+  <li>
+    <ol>
+      <li>Index</li>
+    </ol>
+
+    <ul>
+      <li>WorkSpace에 있는 내용을 내부저장소에 저장하기 전에 올려두는 중간 단계 공간</li>
+      <li>Index공간을 통해서 수정된 파일 중 원하는 파일만 저장소에 저장 시킬 수 있다.</li>
+    </ul>
+  </li>
+  <li>
+    <ol>
+      <li>내부 저장소</li>
+    </ol>
+
+    <ul>
+      <li>Git이 설치된 내부 컴퓨터</li>
+    </ul>
+  </li>
+  <li>
+    <ol>
+      <li>외부 저장소</li>
+    </ol>
+
+    <ul>
+      <li>외부에 저장하는 저장소, GitHub이란 서비스도 외부 저장소에 속한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="5-git의-명령어">5. Git의 명령어</h3>
+
+<ul>
+  <li>
+    <ol>
+      <li>init : git의 초기화</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>clone : 외부저장소에서 프로젝트 내려받기</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>add : 변경된 내용을 index영역에 올려두는 명령어</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>commit : index영역에 있는 내용을 내부저장소에 저장</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>status : 현재 Git 상태 확인</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>branch : 가지치기</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>checkout : 작업 환경 이동(브랜치 간의 이동)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>push : 외부저장소에 데이터 저장</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>pull : 외부 저장소에서 최신 변경사항 받아오기</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="6-git-실습">6. Git 실습</h3>
+
+<ol>
+  <li>Git을 초기화할 폴더를 생성한다. (명령어 : <strong>mkdir 폴더명</strong>)</li>
+</ol>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091101.png" alt="Git_17091101" /></p>
+
+<ol>
+  <li>새로 만든 폴더로 들어가 git을 초기화(<strong>명령어 : git init</strong>)시킨다.그러면 해당 폴더에 git이 초기화 되었고 폴더 내 파일 확인(<strong>명령어 : ls -a</strong>)을 통해 보면 폴더에 .git이 생긴 것을 확인 할 수 있다.</li>
+</ol>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091103.png" alt="Git_17091102" /></p>
+
+<ol>
+  <li>(<strong>명령어 : vi test.txt</strong>)를 통해 파일을 생성하고 문서를 작성하고 만들어 보자</li>
+</ol>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091104.png" alt="Git_17091104" /></p>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091105.png" alt="Git_17091105" /></p>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091106.png" alt="Git_17091106" /></p>
+
+<ol>
+  <li>이렇게 폴더 내에 test.txt 파일을 만들고 git의 상태(명령어 : git status)를 확인해보면 빨간색 글씨로 test.txt 파일이 생성되었다고 나타난다. 이 상태에서 git을 index영역에 저장(<strong>명령어 : git add 파일이름</strong>)을 하면 이 파일은 index 영역에 저장이 된다. (만약 폴더 내의 전체 파일을 add하려면 <strong>git add .</strong>을 하면 된다.)<img src="https://simajune.github.io/img/posting/Git_17091108.png" alt="Git_17091108" /></li>
+  <li>indec영역에 저장을 한 후 다시 git의 상태를 확인해 보면 녹색으로 새로운 파일이 index영역에 추가된 것을 확인 할 수 있다.</li>
+</ol>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091109.png" alt="Git_17091109" /></p>
+
+<ol>
+  <li>이 test.txt 파일을 내부 저장소로 저장하기 위해서는 <strong>명령어 : git commit</strong>을 하게 되면 해당 index영역에 있던 변경 사항들이 내부저장소로 저장이 된다.</li>
+</ol>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091110.png" alt="Git_17091110" /></p>
+
+<ol>
+  <li>내부 저장소에 저장한 내역(history)는 <strong>명령어 git reflog</strong>를 통해 확인할 수 있다.</li>
+</ol>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091111.png" alt="Git_17091111" /></p>
+
+<ol>
+  <li>브랜치 생성은 <strong>명령어 git branch 브랜치이름</strong>으로 생성할 수 있고, 해당 git영역에 어떠한 브랜치들이 존재하는지 확인 하기 위해서는 <strong>명령어 git branch</strong>로 확인이 가능하고 현재 어떠한 브랜치에 있는지 녹색으로 확인 가능하다. 그리고 브랜치간에 이동은 <strong>명령어 git checkout 이동할 브랜치</strong>를 하면 브랜치 이동이 가능하다.</li>
+</ol>
+
+<p><img src="https://simajune.github.io/img/posting/Git_17091112.png" alt="Git_17091112" /></p>
+
+<hr />
+
+<p><strong>간편 안내서</strong></p>
+
+<p><a href="http://rogerdudler.github.io/git-guide/index.ko.html">http://rogerdudler.github.io/git-guide/index.ko.html</a></p>
+
+<p><strong>GUI로 branch만들어 보기</strong></p>
+
+<p><a href="http://learnbranch.urigit.com/">http://learnbranch.urigit.com/</a></p>
+
+<p><strong>Pro Git 번역</strong></p>
+
+<p><a href="http://git-scm.com/book/ko/v2">http://git-scm.com/book/ko/v2</a></p>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/12/OOP/" data-toggle="tooltip" data-placement="top" title="객체지향 프로그래밍의 5가지 특징">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/13/VendingMachine/" data-toggle="tooltip" data-placement="top" title="자판기">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

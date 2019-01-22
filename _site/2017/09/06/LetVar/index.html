@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>변수와 상수, 이름 짓기, 산술 연산자</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/06/LetVar/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">변수와 상수, 이름 짓기, 산술 연산자</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-06 00:00:00 +0100">September 06, 2017</time>
+              
+
+                <h1 id="변수와-상수-이름-짓기-산술-연산자">변수와 상수, 이름 짓기, 산술 연산자</h1>
+
+<h3 id="1-변수">1. 변수</h3>
+
+<blockquote>
+  <ul>
+    <li>생성 후에도 값을 변경할 수 있음</li>
+    <li>프로그램에서 데이터를 저장하는 공간</li>
+    <li>변수의 구성
+      <ul>
+        <li>이름(name) : 변수를 구분 짓기 위해 임시로 지정된 이름</li>
+        <li>형(type) : 변수가 가질 수 있는 데이터의 자료형</li>
+        <li>메모리 주소(address) : 변수가 메모리 상에 위치하고 있는 주소</li>
+        <li>값(value) : 변수에 들어가는 데이터, 대입연산자를 통해 변수에 값을 지정할 수 있다.</li>
+        <li>영역(scope) : 변수가 사용가능한 영역. 변수의 사용이 허락되어지는 프로그램의 범위</li>
+      </ul>
+    </li>
+    <li>
+      <p>기본 표현</p>
+
+      <ul>
+        <li>
+          <p>var 변수명: 데이터타입 = “값”</p>
+
+          <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="err">“</span><span class="kt">Taejune</span><span class="err">”</span>
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>변수를 생성할 때 데이터 생략이 가능 (스위프트에선 자동으로 데이터 타입을 추론)</p>
+
+          <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="err">“</span><span class="kt">Taejune</span><span class="err">”</span>
+</code></pre></div>          </div>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>변수를 선언할 때 무조건 값을 초기화 해주지 않고 나중에 값을 대입해도 됨</p>
+    </li>
+    <li>데이터 타입이 String (문자열)인 경우에는 값의 처음과 끝에 큰 따옴표(“)를 써야함</li>
+  </ul>
+</blockquote>
+
+<h3 id="2-상수">2. 상수</h3>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>한번 값을 설정하게 되면 이후에 변경할 수 없음</p>
+    </li>
+    <li>
+      <p>기본 표현</p>
+
+      <ul>
+        <li>
+          <p>let 상수명: 데이터타입 = 값</p>
+
+          <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">15</span>
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>상수를 선언할 때에도 데이터 생략이 가능</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="3-이름-짓기">3. 이름 짓기</h3>
+
+<h5 id="--사용할-수-없는-경우">- 사용할 수 없는 경우</h5>
+
+<blockquote>
+  <ol>
+    <li>스위프트에서 미리 사용하고 있는 <strong>예약어와 키워드</strong>인 경우</li>
+    <li>해당코드 범위 내에서 이미 사용하고 있는 기존의 이름과 <strong>동일한 이름</strong>인 경우</li>
+    <li><strong>연산자</strong>로 사용될 수 있는 기호들 (예를 들어, +, -, *, /)</li>
+    <li><strong>숫자</strong>로 시작되는 이름 (단, 이름 중간에는 숫자가 포함되도 됨)</li>
+    <li><strong>공백</strong>이 포함된 이름</li>
+  </ol>
+</blockquote>
+
+<h5 id="--함수-메서드-인스턴스-이름은-첫글자를-소문자로-사용하는-소문자카멜케이스-lowercamelcase를-사용">- 함수, 메서드, 인스턴스 이름은 첫글자를 소문자로 사용하는 <strong><em>소문자카멜케이스 (LowerCamelCase)</em></strong>를 사용</h5>
+
+<h5 id="--클래스-구조체-익스텐션-프로토콜-열거형-이름은-첫글자를-대문자로-사용하는-대문자카멜케이스-uppercamelcase를-사용합니다">- 클래스, 구조체, 익스텐션, 프로토콜, 열거형 이름은 첫글자를 대문자로 사용하는 <strong><em>대문자카멜케이스 (UpperCamelCase)</em></strong>를 사용합니다.</h5>
+
+<h5 id="-예약어와-키워드">* 예약어와 키워드</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 예약어는 프로그래밍 언어에서 미리 사용하기로 약속되어 있는 단어로 식별자로 사용될 수 없는 단어
+- 키워드는 프로그래밍 언어의 문법의 일부로 특별한 의미를 가지는 단어
+- 스위프트의 키워드는 대부분 예약어
+</code></pre></div></div>
+
+<h3 id="4-변수의-자료형">4. 변수의 자료형</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">타입이름</th>
+      <th style="text-align: center">타입</th>
+      <th style="text-align: center">설명</th>
+      <th style="text-align: center">문법예제</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">정수</td>
+      <td style="text-align: center">Int</td>
+      <td style="text-align: center">1, 2, 3, 10, 1466</td>
+      <td style="text-align: center">var number: Int</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">실수</td>
+      <td style="text-align: center">Double</td>
+      <td style="text-align: center">1.31, 12,5, 3122,1</td>
+      <td style="text-align: center">var number: Double</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">문자열</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">“Simajune”</td>
+      <td style="text-align: center">var name: String</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">불리언</td>
+      <td style="text-align: center">Bool</td>
+      <td style="text-align: center">true or false</td>
+      <td style="text-align: center">var isFind: Bool</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="5-산술-연산자">5. 산술 연산자</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">기호</th>
+      <th style="text-align: center">예제</th>
+      <th style="text-align: center">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>+</strong></td>
+      <td style="text-align: center">1 + 2 = 3</td>
+      <td style="text-align: center">더하기</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>-</strong></td>
+      <td style="text-align: center">2 - 1 = 1</td>
+      <td style="text-align: center">빼기</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">*</td>
+      <td style="text-align: center">2 * 1 = 2</td>
+      <td style="text-align: center">곱하기</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>/</strong></td>
+      <td style="text-align: center">10 / 3 =3</td>
+      <td style="text-align: center">나누기</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>%</strong></td>
+      <td style="text-align: center">10 % 3 = 1</td>
+      <td style="text-align: center">나머지</td>
+    </tr>
+  </tbody>
+</table>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/05/SwiftPrestudy/" data-toggle="tooltip" data-placement="top" title="스위프트에 대해">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/07/Datatype/" data-toggle="tooltip" data-placement="top" title="데이터 타입">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

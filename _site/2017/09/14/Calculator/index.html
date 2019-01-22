@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>학점 계산기</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/14/Calculator/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">학점 계산기</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-14 00:00:00 +0100">September 14, 2017</time>
+              
+
+                <h1 id="학점-계산기">학점 계산기</h1>
+
+<ol>
+  <li>학생을 등록하고 그 학생이 수강한 과목을 등록하고 그 과목의 점수를 입력해서 점수의 평균을 구하고 그 값에 대한 학점을 구해야한다.</li>
+</ol>
+
+<hr />
+
+<p>—main.swift</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="k">let</span> <span class="nv">cal</span> <span class="o">=</span> <span class="kt">SubjectCalculation</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">math</span> <span class="o">=</span> <span class="kt">Subject</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"수학"</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="nf">setScore</span><span class="p">(</span><span class="nv">score</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">english</span> <span class="o">=</span> <span class="kt">Subject</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"영어"</span><span class="p">)</span>
+<span class="n">english</span><span class="o">.</span><span class="nf">setScore</span><span class="p">(</span><span class="nv">score</span><span class="p">:</span> <span class="mi">67</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">science</span> <span class="o">=</span> <span class="kt">Subject</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"과학"</span><span class="p">)</span>
+<span class="n">science</span><span class="o">.</span><span class="nf">setScore</span><span class="p">(</span><span class="nv">score</span><span class="p">:</span> <span class="mi">88</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">coding</span> <span class="o">=</span> <span class="kt">Subject</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"코딩"</span><span class="p">)</span>
+<span class="n">coding</span><span class="o">.</span><span class="nf">setScore</span><span class="p">(</span><span class="nv">score</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">s1</span> <span class="o">=</span> <span class="kt">Student</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"정태준"</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="mi">2008271151</span><span class="p">)</span>
+
+<span class="n">s1</span><span class="o">.</span><span class="nf">addSubject</span><span class="p">(</span><span class="nv">subject</span><span class="p">:</span> <span class="n">math</span><span class="p">)</span>
+<span class="n">s1</span><span class="o">.</span><span class="nf">addSubject</span><span class="p">(</span><span class="nv">subject</span><span class="p">:</span> <span class="n">english</span><span class="p">)</span>
+<span class="n">s1</span><span class="o">.</span><span class="nf">addSubject</span><span class="p">(</span><span class="nv">subject</span><span class="p">:</span> <span class="n">science</span><span class="p">)</span>
+<span class="n">s1</span><span class="o">.</span><span class="nf">addSubject</span><span class="p">(</span><span class="nv">subject</span><span class="p">:</span> <span class="n">coding</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="nf">avrgCalculation</span><span class="p">(</span><span class="nv">student</span><span class="p">:</span> <span class="n">s1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>—Subject.swift</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">class</span> <span class="kt">Subject</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">score</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">gradePoint</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">grade</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"F"</span>
+    <span class="k">var</span> <span class="nv">credits</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="nf">init</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">setScore</span> <span class="p">(</span><span class="nv">score</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">changeGrade</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">95</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"A+"</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"A"</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">85</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"B+"</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"B"</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">75</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"C+"</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"C"</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">65</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"D+"</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s">"D"</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>— Student.swift</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">class</span> <span class="kt">Student</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">studentID</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="k">var</span> <span class="nv">subjects</span><span class="p">:[</span><span class="kt">Subject</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">totalGrade</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"F"</span>
+    <span class="k">var</span> <span class="nv">totalScore</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">totalGradepoint</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">studentID</span> <span class="o">=</span> <span class="n">id</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">setSubjects</span><span class="p">(</span><span class="nv">subjects</span><span class="p">:</span> <span class="p">[</span><span class="kt">Subject</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">subjects</span> <span class="o">=</span> <span class="n">subjects</span>
+
+        <span class="c1">//        for s in subjects {</span>
+        <span class="c1">//            totalScore += s.score</span>
+        <span class="c1">//        }</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">func</span> <span class="nf">addSubject</span><span class="p">(</span><span class="nv">subject</span><span class="p">:</span> <span class="kt">Subject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">subjects</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span>
+        <span class="c1">//        totalScore += subject.score</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>—SubjectCalculation.swift</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">class</span> <span class="kt">SubjectCalculation</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">avrgCalculation</span><span class="p">(</span><span class="nv">student</span><span class="p">:</span> <span class="kt">Student</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">avgScore</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="nf">avgSubject</span><span class="p">(</span><span class="nv">studentName</span><span class="p">:</span> <span class="n">student</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="k">if</span> <span class="n">avgScore</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">{</span>
+            <span class="n">student</span><span class="o">.</span><span class="n">totalGrade</span> <span class="o">=</span> <span class="s">"A"</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">avgScore</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">{</span>
+            <span class="n">student</span><span class="o">.</span><span class="n">totalGrade</span> <span class="o">=</span> <span class="s">"B"</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">avgScore</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="p">{</span>
+            <span class="n">student</span><span class="o">.</span><span class="n">totalGrade</span> <span class="o">=</span> <span class="s">"C"</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">avgScore</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">{</span>
+            <span class="n">student</span><span class="o">.</span><span class="n">totalGrade</span> <span class="o">=</span> <span class="s">"D"</span>
+        <span class="p">}</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">student</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">님의 평균점수는 </span><span class="se">\(</span><span class="n">avgScore</span><span class="se">)</span><span class="s">이고 최종학점은 </span><span class="se">\(</span><span class="n">student</span><span class="o">.</span><span class="n">totalGrade</span><span class="se">)</span><span class="s">입니다"</span>
+        <span class="k">return</span> <span class="n">text</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">sumAllSubjects</span><span class="p">(</span><span class="nv">subjects</span><span class="p">:</span> <span class="p">[</span><span class="kt">Subject</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">totalScore</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">subject</span> <span class="k">in</span> <span class="n">subjects</span> <span class="p">{</span>
+            <span class="n">totalScore</span> <span class="o">+=</span> <span class="n">subject</span><span class="o">.</span><span class="n">score</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">totalScore</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">avgSubject</span><span class="p">(</span><span class="nv">studentName</span><span class="p">:</span> <span class="kt">Student</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Double</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">avgScore</span> <span class="o">=</span> <span class="kt">Double</span><span class="p">(</span><span class="nf">sumAllSubjects</span><span class="p">(</span><span class="nv">subjects</span><span class="p">:</span> <span class="n">studentName</span><span class="o">.</span><span class="n">subjects</span><span class="p">))</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">studentName</span><span class="o">.</span><span class="n">subjects</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">avgScore</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/14/BankSystem/" data-toggle="tooltip" data-placement="top" title="은행 계좌 만들기">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/14/Class/" data-toggle="tooltip" data-placement="top" title="클래스와 객체">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

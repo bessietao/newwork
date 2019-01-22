@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>조건문, 반복문</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/08/IfFor/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">조건문, 반복문</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-08 00:00:00 +0100">September 08, 2017</time>
+              
+
+                <h1 id="조건문-반복문">조건문, 반복문</h1>
+
+<h3 id="1-조건문">1. 조건문</h3>
+
+<ul>
+  <li>
+    <p>양자 택일문으로 어떠한 조건에 맞는지 아닌지를 판별하여 코드를 실행</p>
+  </li>
+  <li>
+    <p>대표적인 조건무으로 if-else문과 switch-case문이 있다.</p>
+
+    <p><img src="https://simajune.github.io/img/posting/17090801.png" alt="17090801_Class" /></p>
+  </li>
+</ul>
+
+<h4 id="if-else문">if-else문</h4>
+
+<ul>
+  <li>
+    <p>조건이 참일 경우 if문의 중괄호 안의 코드가 실행된다.</p>
+  </li>
+  <li>
+    <p>만약 조건이 거짓인 경우 else문의 중괄호 안의 코드가 실행된다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">조건</span> <span class="p">{</span>
+    <span class="c1">//조건이 만족되면 실행할 코드</span>
+<span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+    <span class="c1">//조건이 만족되지 않을 때 실행할 코드</span>
+<span class="p">}</span>
+<span class="c1">//조건값은 참, 거짓이 나타나는 Bool값으로 표현해야 한다.</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="else-if문">else-if문</h4>
+
+<ul>
+  <li>
+    <p>조건이 여러 개일 경우 사용</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">조건1</span> <span class="p">{</span>
+    <span class="c1">//조건1이 만족되면 실행</span>
+<span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="n">조건2</span> <span class="p">{</span>
+    <span class="c1">//조건1이 만족되지 않고 조건2가 만족되면 실행</span>
+<span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+    <span class="c1">//조건1,2가 모두 만족되지 않을 떄 실행</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h5 id="조건-만들기">조건 만들기</h5>
+
+<ul>
+  <li>비교연산자를 통해 조건의 결과가 Bool값으로 나와야 한다.</li>
+  <li>논리 연산자로 다양한 조건의 조합이 가능하다.</li>
+</ul>
+
+<h5 id="비교연산자">비교연산자</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">기호</th>
+      <th style="text-align: center">예제</th>
+      <th style="text-align: center">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>==</strong></td>
+      <td style="text-align: center">A == B</td>
+      <td style="text-align: center">A와 B가 <strong>같다.</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>&gt;=</strong></td>
+      <td style="text-align: center">A &gt;= B</td>
+      <td style="text-align: center">A가 B보다 <strong>크거나 같다.</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>&lt;=</strong></td>
+      <td style="text-align: center">A &lt;= B</td>
+      <td style="text-align: center">A가 B보다 <strong>작거나 같다.</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>&gt;</strong></td>
+      <td style="text-align: center">A &gt; B</td>
+      <td style="text-align: center">A가 B보다 <strong>크다.</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>&lt;</strong></td>
+      <td style="text-align: center">A &lt; B</td>
+      <td style="text-align: center">A가 B보다 <strong>작다.</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="논리연산자">논리연산자</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">기호</th>
+      <th style="text-align: center">예제</th>
+      <th style="text-align: center">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">&amp;&amp;</td>
+      <td style="text-align: center">A조건 &amp;&amp; B조건</td>
+      <td style="text-align: center">A조건이 참이고, B조건이 참이면 참이다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">||</td>
+      <td style="text-align: center">A조건 || B조건</td>
+      <td style="text-align: center">A조건, B조건 하나라도 참이면 참이다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">!</td>
+      <td style="text-align: center">! (A조건 || B조건)</td>
+      <td style="text-align: center">A조건, B조건 모두 거짓이면 참이다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="2-반복문">2. 반복문</h3>
+
+<ul>
+  <li>반복적으로 실행되는 코드를 만드는 구문</li>
+  <li>대표적인 반복문으로 while문과 for-in문이 있다.</li>
+</ul>
+
+<h4 id="while문">while문</h4>
+
+<ul>
+  <li>
+    <p>조건이 참일 경우 구문 반복 실행</p>
+  </li>
+  <li>
+    <p>조건이 계속 참일 경우 무한 반복되므로 조건을 잘 설정해야 한다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"현재 횟수는 </span><span class="se">\(</span><span class="n">number</span><span class="se">)</span><span class="s">입니다."</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>​</p>
+  </li>
+</ul>
+
+<h5 id="범위-연산자">범위 연산자</h5>
+
+<ul>
+  <li>Int형 데이터의 범위에 해당하는 값을 나타낸다.</li>
+  <li>a, b에 변수의 값을 사용가능</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">범위 연산자</th>
+      <th style="text-align: center">예제</th>
+      <th style="text-align: center">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">a … b</td>
+      <td style="text-align: center">3 … 10</td>
+      <td style="text-align: center">3 ~ 10까지의 숫자</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">a ..&lt; b</td>
+      <td style="text-align: center">2 ..&lt; 9</td>
+      <td style="text-align: center">2부터 9까지 숫자 중 9는 포함하지 않는 숫자</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="for-in문">for-in문</h4>
+
+<ul>
+  <li>
+    <p>스위프트에선 for문 대신 for-in문을 사용한다.</p>
+  </li>
+  <li>
+    <p>배열의 항목, 숫자의 범위 또는 문자열의 문자와 같은 시퀀스를 반복하려면 for-in문을 사용한다.</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">element</span> <span class="k">in</span> <span class="n">sequenceData</span> <span class="p">{</span>
+  <span class="c1">//반복될 구문</span>
+<span class="p">}</span>
+
+<span class="c1">//예제</span>
+<span class="k">var</span> <span class="nv">x</span><span class="p">:</span><span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="n">x</span><span class="o">...</span><span class="mi">5</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"현재 횟수는 </span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s">입니다."</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/08/Gugudan/" data-toggle="tooltip" data-placement="top" title="반복문을 이용해 구구단 출력하기">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/08/IfForPractice/" data-toggle="tooltip" data-placement="top" title="반복문, 조건문을 이용한 연습문제">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

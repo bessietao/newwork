@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>자판기</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/13/VendingMachine/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">자판기</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-13 00:00:00 +0100">September 13, 2017</time>
+              
+
+                <h1 id="자판기">자판기</h1>
+
+<p><img src="https://simajune.github.io/img/posting/VendingMachine.png" width="300px" height="500px" /></p>
+
+<ol>
+  <li>우선 첫번째 방법으로는 클래스를 쓰지 않고 만들어 보았다. 일단 클래스를 사용하는게 익숙지 않다보니 처음에는 ViewController에 모든 함수를 만들어서 자판기를 만들었다.</li>
+</ol>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
+<span class="c1">//  ViewController.swift</span>
+<span class="c1">//  VendingMachine</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by SIMA on 2017. 9. 15..</span>
+<span class="c1">//  Copyright © 2017년 SIMA. All rights reserved.</span>
+
+<span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">//mactracker의 가격은 300만원, 애플티비는 50만원, 맥프로는 2000만원, 애플와치는 80만원, 맥북은 200만원, 아이맥은 500만원</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">itemPrice</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>       <span class="c1">//아이템 가격을 나타내는 레이블</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">remainAmount</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>    <span class="c1">//남은 금액을 나타내는 레이블</span>
+    <span class="k">var</span> <span class="nv">selectItem</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">var</span> <span class="nv">priceView</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">depositMoney</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">var</span> <span class="nv">lackMoney</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
+
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">didReceiveMemoryWarning</span><span class="p">()</span>
+        <span class="c1">// Dispose of any resources that can be recreated.</span>
+    <span class="p">}</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">vendingItem</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">itemPriceView</span><span class="p">(</span><span class="nv">btn</span><span class="p">:</span> <span class="n">sender</span><span class="o">.</span><span class="n">titleLabel</span><span class="o">!.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">moneyInput</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">==</span> <span class="s">"남은 금액"</span> <span class="p">{</span>
+            <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"0"</span>
+        <span class="p">}</span>
+        <span class="nf">addMoney</span><span class="p">(</span><span class="nv">btn</span><span class="p">:</span> <span class="n">sender</span><span class="o">.</span><span class="n">titleLabel</span><span class="o">!.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">selectItem</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">buyItem</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="c1">//아이템을 선택해서 샀을 때 실핼하기 위한 함수</span>
+    <span class="kd">func</span> <span class="nf">buyItem</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="kt">Int</span><span class="p">(</span><span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span><span class="o">!</span> <span class="o">-</span> <span class="kt">Int</span><span class="p">(</span><span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span><span class="o">!</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span><span class="o">!</span> <span class="o">-</span> <span class="kt">Int</span><span class="p">(</span><span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+            <span class="n">lackMoney</span> <span class="o">=</span> <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span>
+            <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"돈 넣으세요!!"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//입금 버튼을 눌렀을 때의 함수</span>
+    <span class="kd">func</span> <span class="nf">addMoney</span> <span class="p">(</span><span class="nv">btn</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">==</span> <span class="s">"돈 넣으세요!!"</span> <span class="p">{</span>
+            <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="n">lackMoney</span>
+        <span class="p">}</span>
+        <span class="n">depositMoney</span> <span class="o">=</span> <span class="n">btn</span>
+        <span class="k">switch</span> <span class="n">depositMoney</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"100만원"</span> <span class="p">:</span>
+            <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1000000</span><span class="p">)</span>
+        <span class="k">case</span> <span class="s">"500만원"</span> <span class="p">:</span>
+            <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span><span class="o">!</span> <span class="o">+</span> <span class="mi">5000000</span><span class="p">)</span>
+        <span class="k">case</span> <span class="s">"1000만원"</span> <span class="p">:</span>
+            <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span><span class="o">!</span> <span class="o">+</span> <span class="mi">10000000</span><span class="p">)</span>
+        <span class="k">default</span> <span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//아이템 가격을 눌렀을 때 반응하는 함수</span>
+    <span class="kd">func</span> <span class="nf">itemPriceView</span> <span class="p">(</span><span class="nv">btn</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">selectItem</span> <span class="o">=</span> <span class="n">btn</span>
+        <span class="k">switch</span> <span class="n">selectItem</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"mactracker"</span> <span class="p">:</span>
+            <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"3000000"</span>
+        <span class="k">case</span> <span class="s">"appletv"</span> <span class="p">:</span>
+            <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"500000"</span>
+        <span class="k">case</span> <span class="s">"macpro"</span> <span class="p">:</span>
+            <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"20000000"</span>
+        <span class="k">case</span> <span class="s">"applewatch"</span> <span class="p">:</span>
+            <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"8000000"</span>
+        <span class="k">case</span> <span class="s">"macbook"</span> <span class="p">:</span>
+            <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"2000000"</span>
+        <span class="k">case</span> <span class="s">"imac"</span> <span class="p">:</span>
+            <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"5000000"</span>
+        <span class="k">default</span> <span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<ol>
+  <li>클래스를 이용해서 자판기를 다시 작성해보았다. 우선 스위프트 파일을 새로 만들어 machine이라는 클래스를 만들어 필요한 프로퍼티와 매소드를 만들어 작성 했다. 그 결과 전에 만들었던 코드보다 훨씬 깔끔하게 작성할 수 있었다.</li>
+</ol>
+
+<p>— ViewController.swift</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
+<span class="c1">//  ViewController.swift</span>
+<span class="c1">//  VendingMachine</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by SIMA on 2017. 9. 15..</span>
+<span class="c1">//  Copyright © 2017년 SIMA. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">//mactracker의 가격은 300만원, 애플티비는 50만원, 맥프로는 2000만원, 애플와치는 80만원, 맥북은 200만원, 아이맥은 500만원</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">itemPrice</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>       <span class="c1">//아이템 가격을 나타내는 레이블</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">remainAmount</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>    <span class="c1">//남은 금액을 나타내는 레이블</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">priceWon</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>        <span class="c1">//가격 뒤에 "원"을 나타내기 위한 레이블</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">remainWon</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>       <span class="c1">//남은 금액 뒤에 "원"을 나타내기 위한 레이블</span>
+
+    <span class="k">let</span> <span class="nv">machine</span><span class="p">:</span> <span class="kt">Vending</span> <span class="o">=</span> <span class="kt">Vending</span><span class="p">()</span>        <span class="c1">//클래스 초기화</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
+        <span class="n">priceWon</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">""</span>                 <span class="c1">//레이블 초기 값은 없음</span>
+        <span class="n">remainWon</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">""</span>                <span class="c1">//레이블 초기 값은 없음</span>
+    <span class="p">}</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">didReceiveMemoryWarning</span><span class="p">()</span>
+        <span class="c1">// Dispose of any resources that can be recreated.</span>
+    <span class="p">}</span>
+    <span class="c1">//아이템을 눌렀을 때 가격이 나오게 하는 함수</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">vendingItem</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span>  <span class="n">machine</span><span class="o">.</span><span class="nf">itemPriceView</span><span class="p">(</span><span class="nv">btn</span><span class="p">:</span> <span class="n">sender</span><span class="o">.</span><span class="n">titleLabel</span><span class="o">!.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">//입금 버튼을 눌렀을 때 남은 금액 가격 레이블을 변화시키는 함수</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">moneyInput</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">==</span> <span class="s">"남은 금액"</span> <span class="p">{</span>
+            <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="s">"0"</span>
+        <span class="p">}</span>
+        <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span>  <span class="n">machine</span><span class="o">.</span><span class="nf">addMoney</span><span class="p">(</span><span class="nv">remainButton</span><span class="p">:</span> <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">,</span> <span class="nv">depositButton</span><span class="p">:</span> <span class="n">sender</span><span class="o">.</span><span class="n">titleLabel</span><span class="o">!.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">//아이템을 선택해서 샀을 때 남은 금액의 레이블을 변화시키기 위한 함수</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">selectItem</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="nf">buyItem</span><span class="p">(</span><span class="nv">remainButton</span><span class="p">:</span> <span class="n">remainAmount</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">,</span> <span class="nv">priceButton</span><span class="p">:</span> <span class="n">itemPrice</span><span class="o">.</span><span class="n">text</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>— Vending.swift</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
+<span class="c1">//  Vending.swift</span>
+<span class="c1">//  VendingMachine</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by SIMA on 2017. 9. 16..</span>
+<span class="c1">//  Copyright © 2017년 SIMA. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">class</span> <span class="kt">Vending</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">lackMoney</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>      <span class="c1">//돈이 부족했을 때 가지고 있던 금액을 따로 저장하기 위한 변수</span>
+
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+    <span class="c1">//아이템을 선택해서 샀을 때 실핼하기 위한 함수</span>
+    <span class="kd">func</span> <span class="nf">buyItem</span><span class="p">(</span><span class="nv">remainButton</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">priceButton</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">tmpRemainButton</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">remainButton</span>
+        <span class="k">if</span> <span class="n">tmpRemainButton</span> <span class="o">!=</span> <span class="s">"돈 넣으세요!!"</span> <span class="o">&amp;&amp;</span> <span class="n">tmpRemainButton</span> <span class="o">!=</span> <span class="s">"남은 금액"</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="kt">Int</span><span class="p">(</span><span class="n">tmpRemainButton</span><span class="p">)</span><span class="o">!</span> <span class="o">-</span> <span class="kt">Int</span><span class="p">(</span><span class="n">priceButton</span><span class="p">)</span><span class="o">!</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">{</span>
+                <span class="n">tmpRemainButton</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">tmpRemainButton</span><span class="p">)</span><span class="o">!</span> <span class="o">-</span> <span class="kt">Int</span><span class="p">(</span><span class="n">priceButton</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+                <span class="n">lackMoney</span> <span class="o">=</span> <span class="n">remainButton</span>
+                <span class="n">tmpRemainButton</span> <span class="o">=</span> <span class="s">"돈 넣으세요!!"</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">tmpRemainButton</span>
+    <span class="p">}</span>
+
+    <span class="c1">//입금 버튼을 눌렀을 때의 함수</span>
+    <span class="kd">func</span> <span class="nf">addMoney</span> <span class="p">(</span><span class="nv">remainButton</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">depositButton</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">{</span>
+        <span class="k">var</span> <span class="nv">tmpRemainButton</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">remainButton</span>
+        <span class="k">if</span> <span class="n">tmpRemainButton</span> <span class="o">==</span> <span class="s">"돈 넣으세요!!"</span> <span class="p">{</span>
+            <span class="n">tmpRemainButton</span> <span class="o">=</span> <span class="n">lackMoney</span>
+        <span class="p">}</span>
+        <span class="k">switch</span> <span class="n">depositButton</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"100만원"</span> <span class="p">:</span>
+            <span class="n">tmpRemainButton</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">tmpRemainButton</span><span class="p">)</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1000000</span><span class="p">)</span>
+        <span class="k">case</span> <span class="s">"500만원"</span> <span class="p">:</span>
+            <span class="n">tmpRemainButton</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">tmpRemainButton</span><span class="p">)</span><span class="o">!</span> <span class="o">+</span> <span class="mi">5000000</span><span class="p">)</span>
+        <span class="k">case</span> <span class="s">"1000만원"</span> <span class="p">:</span>
+            <span class="n">tmpRemainButton</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">tmpRemainButton</span><span class="p">)</span><span class="o">!</span> <span class="o">+</span> <span class="mi">10000000</span><span class="p">)</span>
+        <span class="k">default</span> <span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">tmpRemainButton</span>
+    <span class="p">}</span>
+
+    <span class="c1">//아이템 가격을 눌렀을 때 반응하는 함수</span>
+    <span class="kd">func</span> <span class="nf">itemPriceView</span> <span class="p">(</span><span class="nv">btn</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">{</span>
+        <span class="k">var</span> <span class="nv">tmpItemPrice</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="k">switch</span> <span class="n">btn</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"mactracker"</span> <span class="p">:</span>
+            <span class="n">tmpItemPrice</span> <span class="o">=</span> <span class="s">"3000000"</span>
+        <span class="k">case</span> <span class="s">"appletv"</span> <span class="p">:</span>
+            <span class="n">tmpItemPrice</span> <span class="o">=</span> <span class="s">"500000"</span>
+        <span class="k">case</span> <span class="s">"macpro"</span> <span class="p">:</span>
+            <span class="n">tmpItemPrice</span> <span class="o">=</span> <span class="s">"20000000"</span>
+        <span class="k">case</span> <span class="s">"applewatch"</span> <span class="p">:</span>
+            <span class="n">tmpItemPrice</span> <span class="o">=</span> <span class="s">"8000000"</span>
+        <span class="k">case</span> <span class="s">"macbook"</span> <span class="p">:</span>
+            <span class="n">tmpItemPrice</span> <span class="o">=</span> <span class="s">"2000000"</span>
+        <span class="k">case</span> <span class="s">"imac"</span> <span class="p">:</span>
+            <span class="n">tmpItemPrice</span> <span class="o">=</span> <span class="s">"5000000"</span>
+        <span class="k">default</span> <span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">tmpItemPrice</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/13/Git/" data-toggle="tooltip" data-placement="top" title="Git 사용법">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/14/BankSystem/" data-toggle="tooltip" data-placement="top" title="은행 계좌 만들기">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>

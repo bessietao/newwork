@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>열거형(Enumeration)</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta name="keywords" content="your keywords, separated by commas" />
+    <meta name="author" content="Tae June JUNG">
+    <link rel="canonical" href="http://localhost:4000/2017/09/19/Enum/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tejay's Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li>
+                        <a href="/blog/">Posting</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://simajune.github.io/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+      <hr><hr><hr><hr><hr>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h1 class="post-title">열거형(Enumeration)</h1>
+              <div class="post-line"></div>
+              <span>Written by</span>
+              
+                  Tejay
+              
+
+              
+                <br>
+                <span>on&nbsp;</span><time datetime="2017-09-19 00:00:00 +0100">September 19, 2017</time>
+              
+
+                <h1 id="열거형enumeration">열거형(Enumeration)</h1>
+
+<ul>
+  <li>그룹에 대해 연관된 값을 정으하고 사용가능한 타입</li>
+  <li>항목 그 자체가 고유의 값이므로 해당 항목에 값을 매칭 시킬 필요가 없다.</li>
+  <li>원시값(rawValue)이라는 형태로 실제 값을 부여할 수 있다.</li>
+  <li>열거형의 초기화를 정의할 수 있고 , 프로토콜을 준수하고, 연산 프로퍼트, 메서드 등을 만들 수 있다.</li>
+  <li>오타나 잘못된 값이 들어오면 컴파일러가 잡아내기 때문에 실수를 줄일 수 있다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">months</span> <span class="o">=</span> <span class="p">[</span><span class="s">"January"</span><span class="p">,</span> <span class="s">"February"</span><span class="p">,</span> <span class="s">"March"</span><span class="p">,</span> <span class="s">"April"</span><span class="p">,</span> <span class="s">"May"</span><span class="p">,</span><span class="s">"June"</span><span class="p">,</span> <span class="s">"July"</span><span class="p">,</span> <span class="s">"August"</span><span class="p">,</span><span class="s">"September"</span><span class="p">,</span> <span class="s">"October"</span><span class="p">,</span><span class="s">"November"</span><span class="p">,</span> <span class="s">"December"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>보통 “월”을 쓰려고 하면 위에 코드와 같이 배열을 String으로 타입을 설정하고 나열을 했을 것이다. 하지만 열거형을 쓰게 되면 아래와 같이 쉽게 표현을 할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Month</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="n">january</span>
+	<span class="k">case</span> <span class="n">february</span>
+	<span class="k">case</span> <span class="n">march</span>
+	<span class="k">case</span> <span class="n">april</span>
+	<span class="k">case</span> <span class="n">may</span>
+	<span class="k">case</span> <span class="n">june</span>
+	<span class="k">case</span> <span class="n">july</span>
+	<span class="k">case</span> <span class="n">august</span>
+	<span class="k">case</span> <span class="n">september</span>
+	<span class="k">case</span> <span class="n">october</span>
+	<span class="k">case</span> <span class="n">november</span>
+	<span class="k">case</span> <span class="n">december</span>
+<span class="p">}</span>
+
+<span class="c1">////////////////////////////////////////</span>
+<span class="kd">enum</span> <span class="kt">Month</span> <span class="p">{</span>
+<span class="k">case</span> <span class="n">january</span><span class="p">,</span> <span class="n">february</span><span class="p">,</span> <span class="n">march</span><span class="p">,</span> <span class="n">april</span><span class="p">,</span> <span class="n">may</span><span class="p">,</span> <span class="n">june</span><span class="p">,</span> <span class="n">july</span><span class="p">,</span> <span class="n">august</span><span class="p">,</span>
+<span class="n">september</span><span class="p">,</span> <span class="n">october</span><span class="p">,</span> <span class="n">november</span><span class="p">,</span> <span class="n">december</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 지정된 열거 항목은 열거형 값으로 지정이 가능하다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">currentMonth</span> <span class="o">=</span> <span class="kt">Month</span><span class="o">.</span><span class="kt">September</span>
+<span class="n">currentMonth</span> <span class="o">=</span> <span class="o">.</span><span class="n">actober</span>
+</code></pre></div></div>
+
+<p>각 case값만 들어갈 수 있으며, 선언 후에는 점(.)을 찍은 뒤 다른 값으로 쉽게 바꿀 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="n">currentMonth</span> <span class="p">{</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">january</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"january"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">february</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"february"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">march</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"march"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">april</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"april"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">may</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"may"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">june</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"june"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">july</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"july"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">august</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"august"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">september</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"september"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">october</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"october"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">november</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"november"</span><span class="p">)</span>
+<span class="k">case</span> <span class="o">.</span><span class="nv">december</span> <span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"december"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 만들어진 열거형은 Switch-case문을 통해 사용이 되며 열거형의 모든 case가 제공될 때에는 default 값을 써줄 필요가 없다.</p>
+
+<h3 id="rawvalue원시값">RawValue(원시값)</h3>
+
+<ul>
+  <li>열거형의 값은 C와는 다르게 각 항목이 Int값과 연결이 되어 있찌 않다. 즉 위에서 보면 january가 그 값 자체인 것이다. 하지만 rawValue값을 통해 각 각의 열거형 case에 타입의 값을 열거형의 이름으로 선언할 수 있다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">ASCIIControlCharacter</span><span class="p">:</span> <span class="kt">Character</span> <span class="p">{</span>
+<span class="k">case</span> <span class="n">tab</span> <span class="o">=</span> <span class="s">"</span><span class="se">\t</span><span class="s">"</span>
+<span class="k">case</span> <span class="n">lineFeed</span> <span class="o">=</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+<span class="k">case</span> <span class="n">carriageReturn</span> <span class="o">=</span> <span class="s">"</span><span class="se">\r</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="c1">//////////////////////////////////////////////</span>
+<span class="kd">enum</span> <span class="kt">Month</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+<span class="k">case</span> <span class="n">january</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">february</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">march</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">april</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">may</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">june</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">july</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">august</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">september</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span><span class="n">october</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">november</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span> <span class="n">december</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="p">}</span>
+<span class="c1">/////////////////////////////////////////////</span>
+<span class="kd">enum</span> <span class="kt">CompassPoint</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+<span class="k">case</span> <span class="n">north</span> <span class="o">=</span> <span class="s">"up"</span><span class="p">,</span> <span class="n">south</span> <span class="o">=</span> <span class="s">"down"</span><span class="p">,</span> <span class="n">east</span> <span class="o">=</span> <span class="s">"right"</span><span class="p">,</span> <span class="n">west</span> <span class="o">=</span> <span class="s">"left"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위와 같이 열거형의 항목에 Character, Int, String 타입의 값을 지정할 수 있고 만약에 값을 입력하지 않을 경우 Int는 처음 항목부터 원시값이 0으로 입력이 되고 String에 경우는 그 항목 자체가 원시값이 되고 Character에 경우에는 입력을 하지 않으면 오류가 발생한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">earthsOrder</span> <span class="o">=</span> <span class="kt">Planet</span><span class="o">.</span><span class="n">earth</span><span class="o">.</span><span class="n">rawValue</span>
+<span class="c1">// earthsOrder is 3</span>
+<span class="k">let</span> <span class="nv">sunsetDirection</span> <span class="o">=</span> <span class="kt">CompassPoint</span><span class="o">.</span><span class="n">west</span><span class="o">.</span><span class="n">rawValue</span>
+<span class="c1">// sunsetDirection is "west"</span>
+</code></pre></div></div>
+
+<p>위에 코드처럼 .rawValue 프로퍼티를 통해 원시값을 가져올 수 있다.</p>
+
+<h3 id="associated-values">Associated values</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Barcode</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="nf">upc</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span>
+	<span class="k">case</span> <span class="nf">qrCode</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">productBarcode</span><span class="p">:</span><span class="kt">Barcode</span> <span class="o">=</span> <span class="kt">Barcode</span><span class="o">.</span><span class="nf">upc</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">85909</span><span class="p">,</span> <span class="mi">51226</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">productBarcode</span> <span class="o">=</span> <span class="o">.</span><span class="nf">qrCode</span><span class="p">(</span><span class="s">"ABCDEFGHIJKLMNOP"</span><span class="p">)</span>
+
+<span class="k">switch</span> <span class="n">productBarcode</span> <span class="p">{</span>
+<span class="k">case</span> <span class="o">.</span><span class="nf">upc</span><span class="p">(</span><span class="k">let</span> <span class="nv">numberSystem</span><span class="p">,</span> <span class="k">let</span> <span class="nv">manufacturer</span><span class="p">,</span> <span class="k">let</span> <span class="nv">product</span><span class="p">,</span> <span class="k">let</span> <span class="nv">check</span><span class="p">):</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"UPC: </span><span class="se">\(</span><span class="n">numberSystem</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">manufacturer</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">product</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">check</span><span class="se">)</span><span class="s">.”)
+case .qrCode(let productCode):
+print("</span><span class="kt">QR</span> <span class="nv">code</span><span class="p">:</span> <span class="err">\</span><span class="p">(</span><span class="n">productCode</span><span class="p">)</span><span class="o">.</span><span class="s">")
+}
+</span></code></pre></div></div>
+
+                <br>
+                
+                <br>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/09/18/Switch/" data-toggle="tooltip" data-placement="top" title="연산자와 Switch문">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/09/20/Baseball/" data-toggle="tooltip" data-placement="top" title="베이스볼 게임">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+        <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>
+                            
+                                Gangbuk-gu, Seoul <br>
+		                    
+                                Republic of Korea <br>
+		                    
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://github.com/simajune" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+		                    
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Credits</h3>
+                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Dev Tejay 2019
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    
+<!-- Portfolio Modals -->
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>FooPls</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/FooPls/FooPls.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>FooPls는 푸드 캘린더와 그것을 공유하는 SNS가 결합된 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/FooPls/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/7.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/FooPls/8.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-content">
+           <div class="close-modal" data-dismiss="modal">
+               <div class="lr">
+                   <div class="rl">
+                   </div>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 col-lg-offset-2">
+                       <div class="modal-body">
+                           <h2>날씨먼지</h2>
+                           <hr class="star-primary">
+                           <img src="img/portfolio/Weathust/Weathust.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                               <p>날씨먼지는 실시간 날씨와 날씨예보 그리고 실시간 미세먼지 정보와 예보를 제공하는 앱입니다.</p>
+                           
+                           <br><br>
+                           
+                           <img src="img/portfolio/Weathust/1.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/2.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/3.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/4.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/5.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <img src="img/portfolio/Weathust/6.png" class="img-responsive img-centered" alt="image-alt">
+                           
+                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
+</html>
